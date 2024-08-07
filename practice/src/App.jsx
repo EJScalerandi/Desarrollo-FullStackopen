@@ -1,17 +1,23 @@
 import { useState } from 'react'
 
-const App = () => {
-  const [ counter, setCounter ] = useState(0)
-  
 
+const App = () => {
+  const [left, setLeft] = useState(0);
+  const [right, setRight] = useState(0);
 
   return (
     <div>
-    <div>Contador {counter}</div>
-    <button onClick={()=> setCounter(counter + 1)}>plus</button>
-    <button onClick={()=> setCounter(0)}>Setear</button>
+      {left}
+      <button onClick={()=>setLeft(left+1)}>
+        left
+      </button>
+  <button onClick={()=>setRight(right+1)}>
+    rigth
+  </button>
+  {right}
     </div>
   )
 }
+
 
 export default App
