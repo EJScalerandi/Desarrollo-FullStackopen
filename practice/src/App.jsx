@@ -1,23 +1,16 @@
-import { useState } from 'react'
+import Note from "./component/Note"
 
-
-const App = () => {
-  const [left, setLeft] = useState(0);
-  const [right, setRight] = useState(0);
+const App = ({notes}) => {
 
   return (
     <div>
-      {left}
-      <button onClick={()=>setLeft(left+1)}>
-        left
-      </button>
-  <button onClick={()=>setRight(right+1)}>
-    rigth
-  </button>
-  {right}
+      <h1>Notes</h1>
+      <ul>
+        {notes.map(note => 
+        <Note key={note.id} note={note}/>)}
+      </ul>
     </div>
   )
 }
-
 
 export default App
